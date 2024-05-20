@@ -1,0 +1,55 @@
+drop database dbInstituto;
+create database dbInstituto;
+
+use dbInstituto;
+
+CREATE TABLE estudiante (
+	idEstudiante int NOT NULL AUTO_INCREMENT,
+    nombresApellidos varchar(100),
+    tipoDocumento varchar(100),
+    documento varchar(100),
+   numeroDocumento varchar(100),
+   telefono varchar(100),
+   carrera varchar(100),
+   PRIMARY KEY (idEstudiante)
+);
+
+CREATE TABLE tipoDocumento (
+	idTipo int NOT NULL AUTO_INCREMENT,
+    documento varchar(100),
+   PRIMARY KEY (idTipo)
+);
+
+CREATE TABLE user(	
+idUser int NOT NULL AUTO_INCREMENT,
+email varchar(100),
+password varchar(100),
+people_idpeople varchar(100),
+rol_idrol varchar(100),
+PRIMARY KEY (idUser)
+);
+
+CREATE TABLE people(
+idPeople int NOT NULL AUTO_INCREMENT,
+name varchar(100),
+lastName varchar(100),
+PRIMARY KEY (idPeople)
+);
+
+CREATE TABLE rol(
+idRol int NOT NULL AUTO_INCREMENT,
+rolName varchar(100),
+PRIMARY KEY (idRol)
+);
+
+INSERT INTO estudiante (nombresApellidos,tipoDocumento,documento,numeroDocumento,telefono,carrera) VALUES ('MONKEYDLUFFY','1','DNI','12345678',123456789,'Medicina');
+INSERT INTO estudiante (nombresApellidos,tipoDocumento,documento,numeroDocumento,telefono,carrera) VALUES ('NarutoUzumaki','2','RUC','12345678912',123456789,'Sistemas');
+INSERT INTO tipodocumento (documento) VALUES ('DNI');
+INSERT INTO tipodocumento (documento) VALUES ('RUC');
+INSERT INTO user (email,password,people_idpeople,rol_idrol) VALUES ('pwsamani@cibertec.edu.pe','123456789','1','1');
+INSERT INTO user (email,password,people_idpeople,rol_idrol) VALUES ('pwsamani2@cibertec.edu.pe','123456789','2','2');
+INSERT INTO people (name,lastName) VALUES ('Ollanta','Humala');
+INSERT INTO people (name,lastName) VALUES ('Alejandro','Toledo');
+INSERT INTO rol (rolName) VALUES ('admin');
+INSERT INTO rol (rolName) VALUES ('docente');
+
