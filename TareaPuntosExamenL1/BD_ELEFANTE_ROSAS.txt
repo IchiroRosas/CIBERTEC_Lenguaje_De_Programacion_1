@@ -1,0 +1,20 @@
+create database BD_ELEFANTES;
+
+use BD_ELEFANTES;
+
+create table elefante (
+	idElefante			int not null auto_increment,		
+	nombre				varchar(100),
+    origen				varchar(100),
+    patas				varchar(100),
+    orejas				varchar(100),
+    trompa				varchar(100),
+    peso				varchar(100),
+    fechaNacimiento		varchar(100),
+    primary key			(idElefante)
+);
+
+insert into elefante (nombre,origen,patas,orejas,trompa,peso,fechaNacimiento) values ('Fantito','Africa','4','2','SI','6000','1994-03-17');
+insert into elefante (nombre,origen,patas,orejas,trompa,peso,fechaNacimiento) values ('Cortadito','Asia','4','1','NO','5750','1980-01-25');
+
+select * from elefante;
