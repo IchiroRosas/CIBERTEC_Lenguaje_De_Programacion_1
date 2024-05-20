@@ -1,0 +1,105 @@
+drop database Proyecto_Final_LP1;
+create database Proyecto_Final_LP1;
+
+use Proyecto_Final_LP1;
+
+create table Users (
+	idUsers int not null auto_increment,
+    correo varchar(100),
+    contraseña varchar(100),
+    rol varchar(100),
+    nombres varchar(100),
+    apellidos varchar(100),
+    PRIMARY KEY(idUsers)
+);
+
+create table Workers(
+    idWorkers int not null auto_increment,
+    nombres varchar(100),
+    apellidoP varchar(100),
+	apellidoM varchar(100),
+    dni varchar(100),
+	salario varchar(100),
+    direccion varchar(100),
+    telefono varchar(100),
+    fechaNacimiento varchar(100),
+    correo varchar(100),
+    jornadaDiaria varchar(100),
+    inicioContrato varchar(100),
+    finContrato varchar(100),
+    cargo varchar(100),
+    tipoContrato varchar(100),
+	PRIMARY KEY(idWorkers)
+);
+
+create table candidatos(
+	idCandidato int not null auto_increment,
+    nombres varchar(100),
+    apellidoP varchar(100),
+	apellidoM varchar(100),
+    dni varchar(100),
+    carrera varchar(100),
+    telefono varchar(100),
+    correo varchar(100),
+    fechaNacimiento varchar(100),
+	primary key(idCandidato)
+);
+
+INSERT INTO Users (correo, contraseña, rol, nombres, apellidos) VALUES ('juan@gmail.com', 'P@sSword!321', 'Gerente de RRHH', 'José', 'González'), ('ana@gmail.com', 'G0ogleM@il#1', 'Director de RRHH', 'María', 'Rodríguez'), ('carlos@gmail.com', 'Segur1d@d2022', 'Jefe de Selección', 'Luis', 'Hernández'), ('laura@gmail.com', 'C0mpr3x!dad', 'Coordinador de Capacitación', 'Gabriela', 'López');
+
+INSERT INTO Workers (nombres, apellidoP, apellidoM, dni, salario, direccion, telefono, fechaNacimiento, correo, jornadaDiaria, inicioContrato, finContrato, cargo, tipoContrato) VALUES 
+('Luis', 'García', 'Pérez', '12345678A', 2000.00, 'Calle Principal 123', '987654321', '1990-05-15', 'luis@gmail.com', '8 horas', '2022-01-01', '2023-01-01', 'Trabajador', 'Indeterminado'),
+('María', 'Martínez', 'López', '87654321B', 1800.50, 'Avenida Central 456', '654321987', '1988-10-20', 'maria@gmail.com', '8 horas', '2021-03-15', '2022-03-15', 'Programador', 'Determinado'),
+('Juan', 'Rodríguez', 'Sánchez', '13579246C', 2200.75, 'Plaza Mayor 789', '123456789', '1995-12-10', 'juan@gmail.com', '6 horas', '2022-02-10', '2022-08-10', 'Limpieza', 'Indeterminado'),
+('Ana', 'González', 'Fernández', '98765432D', 1900.00, 'Calle Secundaria 321', '987123654', '1993-07-25', 'ana@gmail.com', '8 horas', '2021-09-20', '2022-09-20', 'Seguridad', 'A tiempo parcial'),
+('Pedro', 'López', 'Gutiérrez', '45678912E', 2050.25, 'Calle Peatonal 567', '456789123', '1997-04-12', 'pedro@gmail.com', '7 horas', '2022-03-01', '2023-03-01', 'Trabajador', 'Indeterminado'),
+('Elena', 'Hernández', 'Gómez', '36925814F', 1950.00, 'Avenida Principal 789', '789123456', '1994-11-18', 'elena@gmail.com', '8 horas', '2021-12-10', '2023-06-10', 'Programador', 'Indeterminado'),
+('Pablo', 'Díaz', 'Muñoz', '15935746G', 2300.00, 'Plaza del Sol 123', '147258369', '1991-08-30', 'pablo@gmail.com', '8 horas', '2022-04-20', '2023-04-20', 'Limpieza', 'Determinado'),
+('Sara', 'Martín', 'Alvarez', '75395128H', 1800.50, 'Calle Mayor 456', '369852147', '1996-06-05', 'sara@gmail.com', '6 horas', '2021-07-15', '2022-07-15', 'Seguridad', 'Indeterminado'),
+('Daniel', 'Ruiz', 'Sanz', '24681357I', 1950.75, 'Calle del Río 789', '258147369', '1990-03-25', 'daniel@gmail.com', '8 horas', '2022-01-10', '2023-01-10', 'Trabajador', 'Determinado'),
+('Lorena', 'Gómez', 'Pérez', '14725836J', 2000.00, 'Avenida del Parque 321', '987654321', '1992-09-12', 'lorena@gmail.com', '7 horas', '2021-08-15', '2022-08-15', 'Programador', 'A tiempo parcial');
+
+INSERT INTO Workers (nombres, apellidoP, apellidoM, dni, salario, direccion, telefono, fechaNacimiento, correo, jornadaDiaria, inicioContrato, finContrato, cargo, tipoContrato) VALUES 
+('Marcela', 'Gómez', 'Díaz', '25874136K', 1800.00, 'Calle del Bosque 123', '987654321', '1990-11-12', 'marcela@gmail.com', '8 horas', '2022-01-10', '2022-07-10', 'Limpieza', 'Indeterminado'),
+('Jorge', 'López', 'Hernández', '36985214L', 2000.50, 'Avenida Central 456', '654321987', '1995-06-20', 'jorge@gmail.com', '8 horas', '2021-03-15', '2022-03-15', 'Programador', 'Determinado'),
+('Mariana', 'Fernández', 'Martínez', '98765432M', 2200.75, 'Plaza Mayor 789', '123456789', '1992-02-10', 'mariana@gmail.com', '6 horas', '2021-08-10', '2022-08-10', 'Seguridad', 'A tiempo parcial'),
+('Martín', 'González', 'Sánchez', '12365478N', 1900.00, 'Calle Secundaria 321', '987123654', '1993-07-25', 'martin@gmail.com', '8 horas', '2022-09-20', '2023-09-20', 'Trabajador', 'Indeterminado'),
+('Paula', 'Martínez', 'López', '45612378Ñ', 2050.25, 'Calle Peatonal 567', '456789123', '1997-04-12', 'paula@gmail.com', '7 horas', '2021-03-01', '2022-03-01', 'Programador', 'Indeterminado'),
+('Alejandro', 'Rodríguez', 'Gutiérrez', '78965412O', 1950.00, 'Avenida Principal 789', '789123456', '1994-11-18', 'alejandro@gmail.com', '8 horas', '2022-06-10', '2023-12-10', 'Trabajador', 'Determinado'),
+('Eva', 'Hernández', 'Gómez', '32165487P', 2000.75, 'Calle de la Luna 321', '321654987', '1991-08-30', 'eva@gmail.com', '8 horas', '2021-04-20', '2022-04-20', 'Limpieza', 'Indeterminado'),
+('Santiago', 'Díaz', 'Muñoz', '65478921Q', 2300.00, 'Plaza del Sol 123', '147258369', '1996-06-05', 'santiago@gmail.com', '6 horas', '2021-12-15', '2022-12-15', 'Seguridad', 'A tiempo parcial'),
+('Valentina', 'Martín', 'Alvarez', '98732145R', 1900.50, 'Calle Mayor 456', '369852147', '1990-03-25', 'valentina@gmail.com', '8 horas', '2022-02-10', '2023-02-10', 'Trabajador', 'Determinado'),
+('Diego', 'Ruiz', 'Sanz', '75315948S', 1950.75, 'Calle del Río 789', '258147369', '1995-12-10', 'diego@gmail.com', '7 horas', '2021-07-01', '2022-07-01', 'Programador', 'Indeterminado'),
+('Carolina', 'Gómez', 'Pérez', '15975326T', 2000.00, 'Avenida del Parque 321', '987654321', '1993-09-12', 'carolina@gmail.com', '8 horas', '2021-10-15', '2022-10-15', 'Limpieza', 'A tiempo parcial'),
+('Fernando', 'López', 'Gutiérrez', '36914725U', 2050.25, 'Calle del Olivo 567', '123987456', '1997-08-25', 'fernando@gmail.com', '7 horas', '2022-03-20', '2023-03-20', 'Seguridad', 'Determinado'),
+('Isabella', 'Hernández', 'Gómez', '25836914V', 1800.50, 'Calle de los Pinos 789', '654789321', '1992-05-18', 'isabella@gmail.com', '8 horas', '2021-11-10', '2022-11-10', 'Trabajador', 'Indeterminado'),
+('Emilio', 'Gómez', 'Díaz', '14725836W', 2200.00, 'Avenida de la Paz 123', '987654123', '1991-07-30', 'emilio@gmail.com', '8 horas', '2022-08-20', '2023-08-20', 'Programador', 'Determinado'),
+('Natalia', 'Martínez', 'López', '36925814X', 1950.00, 'Calle de la Esperanza 456', '369258147', '1996-02-05', 'natalia@gmail.com', '6 horas', '2022-01-15', '2023-01-15', 'Limpieza', 'Indeterminado');
+
+INSERT INTO candidatos (nombres, apellidoP, apellidoM, dni, carrera, telefono, correo, fechaNacimiento) VALUES 
+('Ana', 'Martínez', 'López', '74863251', 'Psicologia', '654321987', 'ana@gmail.com', '1995-08-20'),
+('Carlos', 'González', 'Rodríguez', '74863252', 'Computacion e Informatica', '789456123', 'carlos@hotmail.com', '1992-03-10'),
+('María', 'Hernández', 'García', '74863253', 'Ingenieria Industrial', '987654321', 'maria@yahoo.com', '1988-12-05'),
+('Javier', 'Pérez', 'Fernández', '74863254', 'Marketing', '741852963', 'javier@gmail.com', '1997-06-25'),
+('Laura', 'López', 'Martínez', '74863255', 'Psicologia', '369258147', 'laura@hotmail.com', '1994-09-15'),
+('Daniel', 'Sanchez', 'Gómez', '74863256', 'Computacion e Informatica', '258147369', 'daniel@yahoo.com', '1991-04-30'),
+('Sofía', 'Díaz', 'Jiménez', '74863257', 'Ingenieria Industrial', '147258369', 'sofia@gmail.com', '1993-11-12'),
+('Pablo', 'Muñoz', 'Vázquez', '74863258', 'Psicologia', '852369741', 'pablo@hotmail.com', '1989-07-08'),
+('Elena', 'Ruiz', 'Sánchez', '74863259', 'Marketing', '963852147', 'elena@yahoo.com', '1996-02-18'),
+('Diego', 'Iglesias', 'Morales', '74863260', 'Ingenieria Industrial', '123456789', 'diego@gmail.com', '1990-10-03'),
+('Carmen', 'Fernández', 'Núñez', '74863261', 'Psicologia', '654987321', 'carmen@hotmail.com', '1998-01-28'),
+('Alejandro', 'Martín', 'Dominguez', '74863262', 'Computacion e Informatica', '789654123', 'alejandro@yahoo.com', '1999-04-22'),
+('Paula', 'García', 'Serrano', '74863263', 'Ingenieria Industrial', '987321654', 'paula@gmail.com', '1992-07-13'),
+('Adrián', 'Gómez', 'Romero', '74863264', 'Marketing', '654123987', 'adrian@hotmail.com', '1995-09-07'),
+('Sara', 'Jiménez', 'López', '74863265', 'Computacion e Informatica', '321654987', 'sara@yahoo.com', '1987-12-01'),
+('Jorge', 'López', 'Pérez', '74863266', 'Psicologia', '987654321', 'jorge@gmail.com', '1994-03-24'),
+('Marta', 'Herrera', 'González', '74863267', 'Marketing', '369852147', 'marta@hotmail.com', '1993-06-16'),
+('Alberto', 'Sánchez', 'Martínez', '74863268', 'Ingenieria Industrial', '852147369', 'alberto@yahoo.com', '1991-10-09'),
+('Natalia', 'Gómez', 'Hernández', '74863269', 'Computacion e Informatica', '147369852', 'natalia@gmail.com', '1998-02-14'),
+('David', 'Muñoz', 'Rodríguez', '74863270', 'Marketing', '123456789', 'david@hotmail.com', '1997-05-28');
+
+Select * from users;
+Select * from workers;
+Select * from candidatos
+
+
