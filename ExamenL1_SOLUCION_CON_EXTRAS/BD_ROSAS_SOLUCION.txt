@@ -1,0 +1,20 @@
+create database BD_ROSAS_SOLUCION;
+
+use BD_ROSAS_SOLUCION;
+
+create table libro (
+	idLibro			int not null auto_increment,		
+	codigo			varchar(100),
+    nombreLibro		varchar(100),
+    edicion			varchar(100),
+    tipo			varchar(100),
+    precio			varchar(100),
+    stock			varchar(100),
+    fechaCompra		varchar(100),
+    primary key		(idLibro)
+);
+
+insert into libro (codigo,nombreLibro,edicion,tipo,precio,stock,fechaCompra) values ('12345','Comics graciosos','2da','entretenimiento','35.00','6','2024-03-17');
+insert into libro (codigo,nombreLibro,edicion,tipo,precio,stock,fechaCompra) values ('23456','Novela interesante','4ta','novela','45.00','2','2024-01-25');
+
+select * from libro;
