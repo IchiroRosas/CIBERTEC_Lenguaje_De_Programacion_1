@@ -1,0 +1,29 @@
+create database reforzandoL2;
+
+use reforzandoL2;
+
+create table mascota(
+id		int not null auto_increment,
+codigo	varchar(100),
+nombre	varchar(100),
+mascota	varchar(100),
+raza	varchar(100),
+duenio	varchar(100),
+primary key	(id)
+);
+
+create table usuario(
+id			int not null auto_increment,
+codigo		varchar(100),
+nombre		varchar(100),
+apellido	varchar(100),
+correo		varchar(100),
+contrasenia	varchar(100),
+primary key (id)
+);
+
+insert into mascota (codigo,nombre,mascota,raza,duenio) value ('MSC12P','fonchito','perro','peruano','ichiro');
+insert into usuario (codigo,nombre,apellido,correo,contrasenia) value ('USN24I','Mauricio','Pelones','elpe@gmail.com','calvo');
+
+select * from usuario;
+select * from mascota;
