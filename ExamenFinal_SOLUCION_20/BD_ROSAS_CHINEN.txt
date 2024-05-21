@@ -1,0 +1,33 @@
+drop database BD_ROSAS_CHINEN;
+create database BD_ROSAS_CHINEN;
+use BD_ROSAS_CHINEN;
+
+CREATE TABLE proveedor (
+	id int NOT NULL AUTO_INCREMENT,
+    ruc varchar(100),
+    nombre varchar(100),
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE libro (
+	id int NOT NULL AUTO_INCREMENT,
+    codigo varchar(100),
+    nombreLibro varchar(100),
+    stock int,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE venta (
+	id int NOT NULL AUTO_INCREMENT,
+    fechaRegistro datetime,
+    idProveedor int,
+    idLibro int,
+	PRIMARY KEY (id)
+);
+
+INSERT INTO proveedor VALUES (1,'98765432101','Proveedor1'),(2,'12345678978','Proveedor2'),(3,'35798645215','Proveedor3');
+INSERT INTO libro VALUES (1,'LIB001','Los 3 chanchitos',12),(2,'LIB002','100 años de soledad',8),(3,'LIB003','La Iliada',4),(4,'LIB004','Harry Potter',9),(5,'LIB005','El principito',5);
+
+select * from proveedor;
+select * from libro;
+select * from venta;
