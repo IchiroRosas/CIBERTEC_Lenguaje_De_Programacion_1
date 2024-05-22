@@ -1,0 +1,30 @@
+CREATE DATABASE dbinstitutov2;
+
+USE dbinstitutov2;
+
+CREATE TABLE student (
+	idEstudent int NOT NULL AUTO_INCREMENT,
+    name varchar(100),
+    lastname varchar(100),
+	code varchar(100),
+    password varchar(100),
+	PRIMARY KEY (idEstudent)
+);
+
+CREATE TABLE subject (
+	idSubject int NOT NULL AUTO_INCREMENT,
+    code varchar(100),
+    name varchar(100),
+    level varchar(100),
+   teacher varchar(100),
+   PRIMARY KEY (idSubject)
+);
+
+INSERT INTO  student  (name, lastname, code, password) values ('Naruto', 'Uzumaki', 'i201820124', '123456789');
+INSERT INTO  student  (name, lastname, code, password) values ('Hinajta', 'Hiuga', 'i201820125', '123456780');
+INSERT INTO  student  (name, lastname, code, password) values ('Eren', 'Jager', 'i201820121', '123456784');
+
+INSERT INTO subject (code,name,level,teacher) VALUES ('C454','Seguridad de aplicaciones','avanzado','Juan Lopez');
+INSERT INTO subject (code,name,level,teacher) VALUES ('C2626','Visual Basic','intermedio','Roberto Gomez');
+INSERT INTO subject (code,name,level,teacher) VALUES ('C1515','Java','basico','Julio Alvarez');
+INSERT INTO subject (code,name,level,teacher) VALUES ('C1212','Aplicaciones Móviles Android','avanzado','Jose Lopez');
