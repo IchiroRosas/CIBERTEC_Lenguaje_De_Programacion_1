@@ -1,0 +1,12 @@
+create database dbCursos
+
+use dbCursos
+
+CREATE TABLE subject (
+	idSubject int NOT NULL AUTO_INCREMENT,
+    code varchar(100),
+    name varchar(100),
+    level varchar(100),
+   teacher varchar(100),
+   PRIMARY KEY (idSubject)
+);
